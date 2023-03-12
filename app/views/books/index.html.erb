@@ -1,32 +1,12 @@
 <div class="container px-5 px-sm-0">
+ <%=render 'validates', book: @book%>
   <div class="row">
-   <div class="col-md-3">  
+   <div class="col-md-3">
      <%= render 'sidebar', book: @booknew %>
    </div>
-   
+
    <div class="col-md-8 offset-md-1">
-    <h1>Books</h1>
-      <table>
-        <thead>
-         <tr>
-          <th></th>
-          <th>Title</th>
-          <th>Opinion</th>
-         </tr>
-        </thead>
-        <% @books.each do |book| %>
-        <tbody>
-         <tr>
-           <td><%= image_tag book.user.get_profile_image(80,80) %></td>
-           <td><%=link_to book_path(book.id) do %>
-                 <%= book.title %>
-               <% end %>
-           </td>
-           <td><%= book.body %></td>
-         </tr>
-        </tbody>
-       </table>
-     <% end %>
+     <%= render 'booklist',books: @books %>
    </div>
   </div>
 </div>
