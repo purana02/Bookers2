@@ -1,7 +1,7 @@
 <div class="container px-5 px-sm-0">
- <%=render 'validates', book: @book%>
   <div class="row">
    <div class="col-md-3">
+     <%= render 'users/userinfo', user: @user %>
      <%= render 'sidebar', book: @booknew %>
    </div>
 
@@ -10,8 +10,11 @@
       <table>
         <tbody>
          <tr>
-           <td><%= image_tag @book.user.get_profile_image(80,80) %>
-               <br><%= @book.user.name %>
+           <td>
+               <%= image_tag @book.user.get_profile_image(80,80) %>
+               <br><%=link_to user_path(@book.user_id) do%>
+                     <%= @book.user.name %>
+                   <% end %>
            </td>
            <td><%= @book.title %></td>
            <td><%= @book.body %></td>

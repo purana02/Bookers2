@@ -1,6 +1,7 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
    <div class="col-md-3">
+     <%= render 'userinfo', user: @user %>
      <%= render 'books/sidebar', book: @booknew %>
    </div>
 
@@ -25,8 +26,8 @@
            </td>
          </tr>
         </tbody>
-       </table>
-     <% end %>
+        <% end %>
+      </table>
    </div>
   </div>
 </div>
